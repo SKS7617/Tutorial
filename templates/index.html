@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section id="home" class="section" {% if section != 'home' %}style="display: none;"{% endif %}>
+        <!-- Link to Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+        <!-- Link to Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="/static/images/BGH.jpg" alt="Image 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="static/images/logo.png" alt="Image 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="static/images/logo@2x.png" alt="Image 3">
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- Pagination (Optional) -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <h1>Welcome to the Home Page</h1>
+        <p>This is the home page of the application.</p>
+    </section>
+
+    <section id="about" class="section" {% if section != 'about' %}style="display: none;"{% endif %}>
+        <h1>About Us</h1>
+        <p>This is the About section.</p>
+    </section>
+
+    <section id="contact" class="section" {% if section != 'contact' %}style="display: none;"{% endif %}>
+        <h1>Contact Us</h1>
+        <p>This is the Contact section.</p>
+    </section>
+{% endblock %}

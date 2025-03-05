@@ -1,14 +1,20 @@
-function showSection(sectionId) {
-  // Hide all sections
-  document.querySelectorAll('.section').forEach(section => {
-      section.style.display = 'none';
-  });
-
-  // Show the selected section
-  document.getElementById(sectionId).style.display = 'block';
+function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
 }
 
-// Show the home section by default when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-  showSection('home');
+/* for image swiping */ 
+const swiper = new Swiper('.swiper', {
+    loop: true, // Enable looping
+    autoplay: {
+        delay: 3000, // Auto-play every 3 seconds
+    },
+    pagination: {
+        el: '.swiper-pagination', // Add pagination dots
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next', // Next button
+        prevEl: '.swiper-button-prev', // Previous button
+    },
 });
